@@ -1,7 +1,10 @@
-function fetchBooks() {
-  // To pass the tests, don't forget to return your fetch!
-  
-}
+function fetchBooks (){
+    return fetch ("https://anapioficeandfire.com/api/books")
+    // translating the response to the database. Response is being translated to something you can read
+    .then((resp) => resp.json())
+    // Takes readable info (json) passes it to the function renderBooks so it shows on HTML
+    .then((json) => renderBooks (json))
+  }
 
 function renderBooks(books) {
   const main = document.querySelector('main');
